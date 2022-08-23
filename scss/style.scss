@@ -19,10 +19,10 @@ body {
 }
 a {
 	transition: .3s all ease;
-	color: $primary;
+	color: grey;
 	&:hover {
 		text-decoration: none;
-		color: $primary;
+		color: gray;
 	}
 	&.link-underline {
 		text-decoration: underline;

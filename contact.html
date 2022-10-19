@@ -43,12 +43,74 @@
           <li class="nav-item active"><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </div>
-    </div>  <div class="d-flex justify-content-center"> 
-      <button class="btn btn-danger btn-sm">
-      <a href="donate.html">  Donate</a>
+    </div>   <div class="d-flex justify-content-center"> 
+      <button class="btn btn-danger btn-sm"  data-toggle="modal" data-target="#donateNow">
+      <a href="#">  Donate</a>
     </button>
    </div>
+    
   </nav>
+
+  <div class="modal fade" id="donateNow" tabindex="-1" role="dialog" aria-labelledby="donateNowLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="donateNowLabel">Thank You</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <script type="text/javascript">
+            function customQuantitiesPayFast (formReference) {
+            formReference['amount'].value = formReference['amount'].value * formReference['custom_quantity'].value;
+            return true;
+            }
+            </script>
+             <script type="text/javascript">
+            function actionPayFastJavascript ( formReference ) {
+            let shippingValidOrOff = typeof shippingValid !== 'undefined' ? shippingValid : true; 
+            let customValid = shippingValidOrOff ? customQuantitiesPayFast( formReference ) : false;
+             if (typeof shippingValid !== 'undefined' && !shippingValid) {
+            return false;
+            }
+            if (typeof customValid !== 'undefined' && !customValid) {
+            return false;
+            }
+            return true;
+             }
+            </script>
+            <form onsubmit="return actionPayFastJavascript( this );" name="PayFastPayNowForm" action="https://www.payfast.co.za/eng/process" method="post">
+            <input required type="hidden" name="cmd" value="_paynow">
+            <input required type="hidden" name="receiver" pattern="[0-9]" value="13975574">
+            <table>
+            <tr>
+            <td><label id="PayFastAmountLabel" for="PayFastAmount">Amount: </label></td>
+            <td><input required id="PayFastAmount" type="number" step=".01" name="amount" min="50.00" placeholder="50.00" value="50"></td>
+            </tr>
+            </table>
+            
+            <!-- <table>
+            <tr>
+            <td><label for="custom_quantity">Quantity: </label></td>
+            <td><input required id="custom_quantity" type="number" name="custom_quantity" value="1"></td>
+            </tr>
+            </table> -->
+            
+            <input required type="hidden" name="item_name" maxlength="255" value="Donate">
+            <input type="hidden" name="item_description" maxlength="255" value="We are dedicated to providing a customized home based care service to patients affected by chronic illnesses.">
+            <table>
+            <tr>
+            <td colspan=2 align=center>
+            <input type="image" src="https://www.payfast.co.za/images/buttons/DonateNow/Red-Large-Round-DonateNow.png" alt="Donate Now" title="Donate Now with PayFast">
+            </td>
+            </tr>
+            </table>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- END nav -->
   
   <div class="block-31" style="position: relative;">
@@ -108,9 +170,119 @@
         </div>
         <div class="col-md-6 col-lg-4">
           <h3 class="heading-section">Recent Blog</h3>
-          <div class="block-21 d-flex mb-4">
+          <div class="block-21 d-flex mb-4" data-toggle="modal" data-target="#successStories">
             <figure class="mr-3">
               <img src="images/new/279677e0-b749-496d-b9f5-e2984f571fa8.jpg" alt="" class="img-fluid">
+            </figure>
+            <div class="text">
+              <h3 class="heading"><a href="#">Success Stories</a></h3>
+              <div class="meta">
+                <div><a href="#"><span class="icon-calendar"></span> July 29, 2021</a></div>
+                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="successStories" tabindex="-1" role="dialog" aria-labelledby="successStoriesLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="successStoriesLabel">Success Stories</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" style="color: black;">
+                  2022
+
+                  <p> I am Avashna Moodley and I am a stroke veteran. Why veteran … I’ve got the scars , had a
+                    meaningful life pretrauma , didn’t have a road map to recovery and definitely had the long service .
+                    My stroke happened more than 11 years ago.</p>
+
+                  <p> My life pre stroke was like any other , we were a family of 4 , me ,my husband and 2 kids who were
+                    in primary school. Like most young families , we lived on our own , this meant we didn’t have a
+                    village to raise our children. This meant a routine filled schedule .My husband ran his family
+                    business . My business was at its peak , I either sold or franchised . I was young ,ambitious and
+                    courageous so I decided to franchise my business that I started on my own strength & intelligence .
+                    Together with my precious family this was my empire , big or small , it was my success .</p>
+
+                  <p> I planned out my whole life to never be where I am right now .</p>
+
+                  <p> I awoke on the morning of Christmas Eve (2011) then quickly realized that I could not move . I
+                    tried to get off the bed to walk to the bathroom , to tell my husband that something was wrong – my
+                    body was frozen in time . I was so confused . </p>
+
+                  <p> After almost 11 years , I still can’t believe this day ever happened. It’s like I’m watched a true
+                    story movie .</p>
+
+                  <br>
+
+
+                  <p> At 41 years old I had a stroke . My empire was turned upside down . There was no warning signs ,
+                    no time to get my affairs in order , to prepare my kids for their mother who could no longer walk ,
+                    talk , read , write or recall her life .</p>
+
+                  <p> For the next 19 days in ICU , I would beg the nurse to call my husband so he can bring my clothes
+                    to take me home . I would pull out all the drips in preparation to go home …. My safe place .</p>
+                  <p> The doctors discharged me very reluctantly so that I could see my eldest child off to his first
+                    day of High school. Reality hit me , the first night at home , I wanted to go to my new safe place
+                    …. The hospital.</p>
+
+                  <p> I felt alone , like I didn’t belong . My family could only visit me in ICU during set periods of
+                    time . They were totally unprepared and unable to read my desperate attempts at communicating
+                    through body language and other non-verbal cues . The frustration went both ways and we all soon
+                    realized how unprepared we were to tackle the after effects of a stroke .</p>
+
+
+                  <p> My head was like a freight train with the brake off. Thoughts and questions rushing around. </p>
+                  <p> I could hear myself speaking clearly to my family and friends but the sound coming from my mouth
+                    didn’t match those formed in my mind .</p>
+
+
+                  <p> According to my neurologist , I had the worst stroke on the scale – 3 in 1 and today I am grateful
+                    to say that I have recovered 99.5% of my physical and mental abilities . </p>
+
+
+                  <br>
+
+                  <p> I look at my stroke as I was stripped of my stuff , I had to rebuild , layer by layer. It was
+                    almost an initiation of sorts. Through my experience I’ve realized that recovery from any life
+                    threatening condition is not something you can not do on your own , because when you are ill you
+                    become mentally, physically and emotionally deprived of the fuel you need to recover fully. This was
+                    the catalyst in setting up a non profit organization called Coming Home . </p>
+                  <p> Once you stop using your pain to navigate your world , you set your recovery in motion .Meaning
+                    your recovery takes place in your mind and then your body will follow . </p>
+                  <p> This is 1st step that me and my fellow stroke veterans show you. </p>
+                  <p> Your doctors play a crucial role , your rehab team play an equally crucial role but they don’t
+                    have first hand experience. We talk to your team and help map out your recovery road , we know how
+                    you feel, we don’t see your mood changes as stubbornness and laziness. We get you , we get your
+                    every need and we know your needs will change cos so has ours . Once you join our Coming Home family
+                    , you are never alone and your family is never alone </p>
+
+
+
+                  <br>
+
+
+                  <p> I view my stroke as a tree under whose shade I did not plan to sit . Nothing grows in the shade .
+                  </p>
+                  <p> Do you choose to sit under your stroke tree ? The only power you have , is the power of choice .
+                  </p>
+                  <p> You’ve have a meaningful life before and you can have a meaningful life now .</p>
+
+                  <p> It’s your choice </p>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="block-21 d-flex mb-4" data-toggle="modal" data-target="#communityDevelopment">
+            <figure class="mr-3">
+              <img src="images/new/4dd03165-72d6-43de-99ed-63405b8ff96d.jpg" alt="" class="img-fluid">
             </figure>
             <div class="text">
               <h3 class="heading"><a href="#">Community Development</a></h3>
@@ -122,12 +294,29 @@
             </div>
           </div>
 
-          <div class="block-21 d-flex mb-4">
+          <div class="modal fade" id="communityDevelopment" tabindex="-1" role="dialog" aria-labelledby="communityDevelopmentLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="communityDevelopmentLabel">Community Development</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img src="/images/download.jpg" style="width: 100%;" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="block-21 d-flex mb-4"  data-toggle="modal" data-target="#lifeAfter">
             <figure class="mr-3">
-              <img src="images/new/4dd03165-72d6-43de-99ed-63405b8ff96d.jpg" alt="" class="img-fluid">
+              <img src="images/new/6e7ce383-86a1-4d70-b9d1-564f11e862b8.jpg" alt="" class="img-fluid">
             </figure>
             <div class="text">
-              <h3 class="heading"><a href="#">Life Is Short So Be Kind</a></h3>
+              <h3 class="heading"><a href="#">Life after stroke</a></h3>
               <div class="meta">
                 <div><a href="#"><span class="icon-calendar"></span> July 29, 2021</a></div>
                 <div><a href="#"><span class="icon-person"></span> Admin</a></div>
@@ -136,16 +325,21 @@
             </div>
           </div>
 
-          <div class="block-21 d-flex mb-4">
-            <figure class="mr-3">
-              <img src="images/new/6e7ce383-86a1-4d70-b9d1-564f11e862b8.jpg" alt="" class="img-fluid">
-            </figure>
-            <div class="text">
-              <h3 class="heading"><a href="#">Monthly healthy food drive that feeds the family of 4</a></h3>
-              <div class="meta">
-                <div><a href="#"><span class="icon-calendar"></span> July 29, 2021</a></div>
-                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+          <div class="modal fade" id="lifeAfter" tabindex="-1" role="dialog" aria-labelledby="lifeAfterLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="lifeAfterLabel">Life after stroke</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!-- <img src="/images/Life After stroke (1).pdf" style="width: 100%;" /> -->
+                  <a href="/images/Life After stroke (1).pdf" target="_blank">Click here to view</a>
+                  <embed src="/images/Life After stroke (1).pdf" style="width: 100%; height: 100%"  />
+                </div>
               </div>
             </div>
           </div>

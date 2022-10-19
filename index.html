@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Coming Home</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,500|Dosis:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/fancybox.min.css">
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+<head>
+  <title>Coming Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  </head>
-  <body>
-    
+  <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,500|Dosis:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/ionicons.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.timepicker.css">
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="css/fancybox.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="text-sm md:navbar-brand" href="index.html"><img src="images/Coming home logo.jpg" style="width: 50px" alt="" class="rounded-circle mr-2">Coming Home Organisation</a>
-    
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="text-sm md:navbar-brand" href="index.html"><img src="images/Coming home logo.jpg" style="width: 50px"
+          alt="" class="rounded-circle mr-2">Coming Home Organisation</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
       </button>
 
@@ -45,32 +49,103 @@
         </ul>
       </div>
     </div>
-    <div class="d-flex justify-content-center"> 
-      <button class="btn btn-danger btn-sm">
-      <a href="donate.html">  Donate</a>
-    </button>
-   </div>
-    
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#donateNow">
+        <a href="#"> Donate</a>
+      </button>
+    </div>
+
   </nav>
+
+  <div class="modal fade" id="donateNow" tabindex="-1" role="dialog" aria-labelledby="donateNowLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="donateNowLabel">Thank You</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <script type="text/javascript">
+            function customQuantitiesPayFast(formReference) {
+              formReference['amount'].value = formReference['amount'].value * formReference['custom_quantity'].value
+              return true
+            }
+          </script>
+          <script type="text/javascript">
+            function actionPayFastJavascript(formReference) {
+              let shippingValidOrOff = typeof shippingValid !== 'undefined' ? shippingValid : true
+              let customValid = shippingValidOrOff ? customQuantitiesPayFast(formReference) : false
+              if (typeof shippingValid !== 'undefined' && !shippingValid) {
+                return false
+              }
+              if (typeof customValid !== 'undefined' && !customValid) {
+                return false
+              }
+              return true
+            }
+          </script>
+          <form onsubmit="return actionPayFastJavascript( this );" name="PayFastPayNowForm"
+            action="https://www.payfast.co.za/eng/process" method="post">
+            <input required type="hidden" name="cmd" value="_paynow">
+            <input required type="hidden" name="receiver" pattern="[0-9]" value="13975574">
+            <table>
+              <tr>
+                <td><label id="PayFastAmountLabel" for="PayFastAmount">Amount: </label></td>
+                <td><input required id="PayFastAmount" type="number" step=".01" name="amount" min="50.00"
+                    placeholder="50.00" value="50"></td>
+              </tr>
+            </table>
+
+            <!-- <table>
+            <tr>
+            <td><label for="custom_quantity">Quantity: </label></td>
+            <td><input required id="custom_quantity" type="number" name="custom_quantity" value="1"></td>
+            </tr>
+            </table> -->
+
+            <input required type="hidden" name="item_name" maxlength="255" value="Donate">
+            <input type="hidden" name="item_description" maxlength="255"
+              value="We are dedicated to providing a customized home based care service to patients affected by chronic illnesses.">
+            <table>
+              <tr>
+                <td colspan=2 align=center>
+                  <input type="image"
+                    src="https://www.payfast.co.za/images/buttons/DonateNow/Red-Large-Round-DonateNow.png"
+                    alt="Donate Now" title="Donate Now with PayFast">
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- END nav -->
-  
+
   <div class="block-31" style="position: relative;">
     <div class="owl-carousel loop-block-31 ">
-      <div class="block-30 block-30-sm item" style="background-image: url('images/new5.jfif');" data-stellar-background-ratio="0.5">
+      <div class="block-30 block-30-sm item" style="background-image: url('images/new5.jfif');"
+        data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-7">
               <h2 class="heading mb-5">Aid, Educate and Donate.</h2>
-              <p style="display: inline-block;"><a href="https://www.youtube.com/embed/-bz0ffRKxvE"  data-fancybox class="ftco-play-video d-flex"><span class="play-icon-wrap align-self-center mr-4"><span class="ion-ios-play"></span></span> <span class="align-self-center">Watch Video</span></a></p>
+              <p style="display: inline-block;"><a href="https://www.youtube.com/embed/-bz0ffRKxvE" data-fancybox
+                  class="ftco-play-video d-flex"><span class="play-icon-wrap align-self-center mr-4"><span
+                      class="ion-ios-play"></span></span> <span class="align-self-center">Watch Video</span></a></p>
             </div>
           </div>
         </div>
       </div>
-      
+
     </div>
   </div>
 
-  <div class="modal fade" id="viewOurProgram" tabindex="-1" role="dialog" aria-labelledby="viewOurProgramLabel" aria-hidden="true">
+  <div class="modal fade" id="viewOurProgram" tabindex="-1" role="dialog" aria-labelledby="viewOurProgramLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -80,14 +155,14 @@
           </button>
         </div>
         <div>
-          <div  style="display: flex;
+          <div style="display: flex;
           align-items: center;">
-          <img style="width: 100%"  src="images/latest/download (1).jfif" alt="Image placeholder">
+            <img style="width: 100%" src="images/latest/download (1).jfif" alt="Image placeholder">
 
           </div>
-          <div  style="display: flex; margin-top: 10px;
+          <div style="display: flex; margin-top: 10px;
           align-items: center;">
-          <img style="width: 100%"  src="images/latest/download (2).jfif" alt="Image placeholder">
+            <img style="width: 100%" src="images/latest/download (2).jfif" alt="Image placeholder">
 
           </div>
 
@@ -95,23 +170,27 @@
       </div>
     </div>
   </div>
-  
+
   <div class="site-section section-counter">
     <div class="container">
       <div class="row">
         <div class="col-md-6 pr-5">
           <div class="block-48">
-              <span class="block-48-text-1">Served Over</span>
-              <div class="block-48-counter ftco-number" data-number="278">0</div>
-              <span class="block-48-text-1 mb-4 d-block">Patients in South Africa</span>
-              <p class="mb-0"><a href="#" data-toggle="modal" data-target="#viewOurProgram" class="btn btn-white px-3 py-2" >View Our Program</a></p>
-            </div>
+            <span class="block-48-text-1">Served Over</span>
+            <div class="block-48-counter ftco-number" data-number="278">0</div>
+            <span class="block-48-text-1 mb-4 d-block">Patients in South Africa</span>
+            <p class="mb-0"><a href="#" data-toggle="modal" data-target="#viewOurProgram"
+                class="btn btn-white px-3 py-2">View Our Program</a></p>
+          </div>
         </div>
         <div class="col-md-6 welcome-text">
           <h2 class="display-4 mb-3">Who Are We?</h2>
-          <p class="lead">We are dedicated to providing a customized home based care service to patients affected by chronic illnesses.</p>
-          <p class="mb-4">We aim to empower them and their families to get access to the best long term, good quality care and rehabilitation. </p>
-          <div class="mb-0"><button href="#" class="btn btn-dark text-white px-3 py-2" data-toggle="modal" data-target="#whoWeAre">Learn More</button></div>
+          <p class="lead">We are dedicated to providing a customized home based care service to patients affected by
+            chronic illnesses.</p>
+          <p class="mb-4">We aim to empower them and their families to get access to the best long term, good quality
+            care and rehabilitation. </p>
+          <div class="mb-0"><button href="#" class="btn btn-dark text-white px-3 py-2" data-toggle="modal"
+              data-target="#whoWeAre">Learn More</button></div>
         </div>
       </div>
     </div>
@@ -128,7 +207,9 @@
         </div>
         <div class="modal-body">
           <h4 class="mb-3">Health</h4>
-          <p class="mb-4">We have a holistic approach to healthcare.  We attend to the physical needs by sending out nurses and caregivers.  We attend to overall wellbeing by giving out food parcels to patients and we also attend to mental needs by offering telephonic support and hosting support groups.</p>
+          <p class="mb-4">We have a holistic approach to healthcare. We attend to the physical needs by sending out
+            nurses and caregivers. We attend to overall wellbeing by giving out food parcels to patients and we also
+            attend to mental needs by offering telephonic support and hosting support groups.</p>
           <!-- <h4 class="mb-3">Healthcare Education</h4> -->
           <!-- <p class="mb-2">Coming Home Organisation enjoys strategic partnerships with local, national and international partners to enhance this lifelong experience by</p>
           <ul class="mb-4">
@@ -137,7 +218,9 @@
             <li>Contributing to leadership and capacity development in education.</li>
           </ul> -->
           <h4 class="mb-3">Community Development</h4>
-          <p class="mb-2">Coming Home Organisation  engages and collaborates with organisations, concerned citizens and professionals to build resilient and responsive communities where access and opportunities to health and healthcare education is lacking.</p>
+          <p class="mb-2">Coming Home Organisation engages and collaborates with organisations, concerned citizens and
+            professionals to build resilient and responsive communities where access and opportunities to health and
+            healthcare education is lacking.</p>
         </div>
       </div>
     </div>
@@ -154,15 +237,19 @@
         </div>
         <div class="modal-body">
           <h4 class="mb-3">OUR MISSION</h4>
-          <p class="mb-4">To provide a customized medical support program to ensure rapid recovery in the comfort of the patient’s own home; hence decreasing the chances of re-admission to hospital whilst increasing the patient’s reintegration back into the family and society in general.</p>
+          <p class="mb-4">To provide a customized medical support program to ensure rapid recovery in the comfort of the
+            patient’s own home; hence decreasing the chances of re-admission to hospital whilst increasing the patient’s
+            reintegration back into the family and society in general.</p>
           <h4 class="mb-3">OUR VISION</h4>
-          <p class="mb-4">To empower chronic disease survivors and their families to get access to the best long term, good quality care, and rehabilitation.</p>
+          <p class="mb-4">To empower chronic disease survivors and their families to get access to the best long term,
+            good quality care, and rehabilitation.</p>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="goalsObjectives" tabindex="-1" role="dialog" aria-labelledby="goalsObjectives" aria-hidden="true">
+  <div class="modal fade" id="goalsObjectives" tabindex="-1" role="dialog" aria-labelledby="goalsObjectives"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -172,19 +259,20 @@
           </button>
         </div>
         <div class="modal-body">
-          <p class="mb-4">The Coming Home support program was set up to benefit the survivors of chronic illness and the South African public through the following.</p>
+          <p class="mb-4">The Coming Home support program was set up to benefit the survivors of chronic illness and the
+            South African public through the following.</p>
 
           <h4 class="mb-3">PRIMARY OBJECTIVES</h4>
-         <ul>
-          <li>To provide a comprehensive home recovery program to patients.
-          </li>
-          <li>To set up primary healthcare services in poor communities in collaboration with other
-            organisations so that socio-economic upliftment is realized.
+          <ul>
+            <li>To provide a comprehensive home recovery program to patients.
             </li>
-          <li>To facilitate support groups for the people who utilize our services
-          </li>
+            <li>To set up primary healthcare services in poor communities in collaboration with other
+              organisations so that socio-economic upliftment is realized.
+            </li>
+            <li>To facilitate support groups for the people who utilize our services
+            </li>
 
-         </ul>
+          </ul>
         </div>
       </div>
     </div>
@@ -199,11 +287,13 @@
             <div class="icon"><span class="ion-ios-bulb"></span></div>
             <div class="media-body">
               <h3 class="heading">Our Mission</h3>
-              <p>To provide a customized medical support program to ensure rapid recovery in the comfort of the patient’s own home; hence decreasing the chances of...</p>
+              <p>To provide a customized medical support program to ensure rapid recovery in the comfort of the
+                patient’s own home; hence decreasing the chances of...</p>
               <!-- <button href="#" data-toggle="modal" data-target="#ourMission" class="link-underline" class="btn btn-dark text-white px-3 py-2">Learn More</button> -->
-              <div class="mb-0"><button href="#" class="btn btn-dark text-white px-3 py-2" data-toggle="modal" data-target="#ourMission">Learn More</button></div>
+              <div class="mb-0"><button href="#" class="btn btn-dark text-white px-3 py-2" data-toggle="modal"
+                  data-target="#ourMission">Learn More</button></div>
             </div>
-          </div>     
+          </div>
         </div>
 
         <div class="col-md-4">
@@ -211,12 +301,14 @@
             <div class="icon"><span class="ion-ios-contacts"></span></div>
             <div class="media-body">
               <h3 class="heading">Our Vision</h3>
-              <p>To empower chronic disease survivors and their families to get access to the best long term, good quality care, and rehabilitation.</p>
-                 <!-- <p><a href="#" data-toggle="modal" data-target="#ourMission" class="link-underline" class="btn btn-dark text-white px-3 py-2">Learn More</a></p> -->
-                 <div class="mb-0"><button href="#" class="btn btn-dark text-white px-3 py-2" data-toggle="modal" data-target="#ourMission">Learn More</button></div>
-            
-                </div>
-          </div> 
+              <p>To empower chronic disease survivors and their families to get access to the best long term, good
+                quality care, and rehabilitation.</p>
+              <!-- <p><a href="#" data-toggle="modal" data-target="#ourMission" class="link-underline" class="btn btn-dark text-white px-3 py-2">Learn More</a></p> -->
+              <div class="mb-0"><button href="#" class="btn btn-dark text-white px-3 py-2" data-toggle="modal"
+                  data-target="#ourMission">Learn More</button></div>
+
+            </div>
+          </div>
         </div>
 
         <div class="col-md-4">
@@ -224,12 +316,14 @@
             <div class="icon"><span class="ion-ios-cash"></span></div>
             <div class="media-body">
               <h3 class="heading">Goals and Objectives</h3>
-              <p>The Coming Home support program was set up to benefit the survivors of chronic illness and the South African public through the following </p>
+              <p>The Coming Home support program was set up to benefit the survivors of chronic illness and the South
+                African public through the following </p>
               <!-- <p><a href="#" data-toggle="modal" data-target="#goalsObjectives"  class="link-underline" style="color:gray;">Learn More</a></p> -->
-              <div class="mb-0"><button href="#" class="btn btn-dark text-white px-3 py-2" data-toggle="modal" data-target="#goalsObjectives">Learn More</button></div>
-           
+              <div class="mb-0"><button href="#" class="btn btn-dark text-white px-3 py-2" data-toggle="modal"
+                  data-target="#goalsObjectives">Learn More</button></div>
+
             </div>
-          </div>  
+          </div>
         </div>
 
       </div>
@@ -238,14 +332,16 @@
 
 
 
-  
+
 
   <div class="site-section fund-raisers bg-light">
     <div class="container">
       <div class="row mb-3 justify-content-center">
         <div class="col-md-8 text-center">
           <h2>Latest Outreaches</h2>
-          <p class="lead">We have a holistic approach to healthcare.  We attend to the physical needs by sending out nurses and caregivers.  We attend to overall wellbeing by giving out food parcels to patients and we also attend to mental needs by offering telephonic support and hosting support groups.</p>
+          <p class="lead">We have a holistic approach to healthcare. We attend to the physical needs by sending out
+            nurses and caregivers. We attend to overall wellbeing by giving out food parcels to patients and we also
+            attend to mental needs by offering telephonic support and hosting support groups.</p>
           <!-- <p><a class="link-underline">View All Patients</a></p> -->
           <div class="mb-0"><a href="about.html" class="btn btn-dark text-white px-3 py-2">View All Patients</a></div>
 
@@ -256,93 +352,111 @@
     <div class="container-fluid">
 
       <!-- <div class="row"> -->
-        
-        <div class="col-md-12 block-11">
-          <div class="nonloop-block-11 owl-carousel">
 
-            <div class="card fundraise-item">
-              <div style="height: 320px; width: 100%; overflow: hidden"><img  src="images/1.jpeg" alt="Image placeholder"></div>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">Ms Ramen</a></h3>
-                <p class="card-text">Ms Ramen, a double amputee patient with her 3 months supply donation of diapers donated by CHO in partnership with Sibaya Community Trust..</p>
-                <span class="donation-time mb-3 d-block">Thank You</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <!-- <span class="fund-raised d-block">12 people assisted with raised of R3,000</span> -->
-              </div>
-            </div>
+      <div class="col-md-12 block-11">
+        <div class="nonloop-block-11 owl-carousel">
 
-            
-            <div class="card fundraise-item">
-              <div style="height: 320px; width: 100%; overflow: hidden"><img  src="images/7.jpeg" alt="Image placeholder"></div>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">Food Hamper</a></h3>
-                <p class="card-text">Some of the recipients of monthly food hamper handouts at Chatsworth community..</p>
-                <span class="donation-time mb-3 d-block">Thank You</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <!-- <span class="fund-raised d-block">12 people assisted with raised of R3,000</span> -->
-              </div>
+          <div class="card fundraise-item">
+            <div style="height: 320px; width: 100%; overflow: hidden"><img src="images/1.jpeg" alt="Image placeholder">
             </div>
-            
-            <div class="card fundraise-item">
-              <div style="height: 320px; width: 100%; overflow: hidden"><img  src="images/3.jpeg" alt="Image placeholder"></div>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">Patient of the year</a></h3>
-                <p class="card-text">Tanya Mark picture with CHO volunteer Seetha Govender. Tanya was crowned patient of the year 2022 after the organisation saw her dedication to her recovery despite her circumstances she always thrive to be better.</p>
-                <span class="donation-time mb-3 d-block">Thank You</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <!-- <!-- <span class="fund-raised d-block">12 people assisted with raised of R3,000</span> --> -->
+            <div class="card-body">
+              <h3 class="card-title"><a href="#">Ms Ramen</a></h3>
+              <p class="card-text">Ms Ramen, a double amputee patient with her 3 months supply donation of diapers
+                donated by CHO in partnership with Sibaya Community Trust..</p>
+              <span class="donation-time mb-3 d-block">Thank You</span>
+              <div class="progress custom-progress-success">
+                <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28"
+                  aria-valuemin="0" aria-valuemax="100"></div>
               </div>
+              <!-- <span class="fund-raised d-block">12 people assisted with raised of R3,000</span> -->
             </div>
-
-
-            <div class="card fundraise-item">
-              <div style="height: 320px; width: 100%; overflow: hidden"><img  src="images/4.jpeg" alt="Image placeholder"></div>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">Nurse Prudence</a></h3>
-                <p class="card-text">Nurse Prudence picture with Mr Pillay during one of the monthly vital check-up.</p>
-                <span class="donation-time mb-3 d-block">Thank You</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <!-- <span class="fund-raised d-block">12 people assisted with raised of R3,000</span> -->
-              </div>
-            </div>
-
-            
-            <div class="card fundraise-item">
-              <div style="height: 320px; width: 100%; overflow: hidden"><img  src="images/5.jpeg" alt="Image placeholder"></div>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">CHO’s objective</a></h3>
-                <p class="card-text">Part of CHO’s objective is to give patients holistic approach to help them recover and be able to aid themselves. In the picture caregiver Nombali assisting Mr. Gordon on his diet and living a healthy lifestyle.</p>
-                <span class="donation-time mb-3 d-block">Thank You</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <!-- <span class="fund-raised d-block">12 people assisted with raised of R3,000</span> -->
-              </div>
-            </div>
-            
-            <div class="card fundraise-item">
-              <div style="height: 320px; width: 100%; overflow: hidden"><img  src="images/new/image5.jpg" alt="Image placeholder"></div>
-              <div class="card-body">
-                <h3 class="card-title"><a href="#">Newlands Community weekly visit</a></h3>
-                <p class="card-text">Mr Mazibuko captured with CHO caregiver Nombali during Newlands Community weekly visit for vital check, home based care and lifestyle and diet advise session.</p>
-                <span class="donation-time mb-3 d-block">Thank You</span>
-                <div class="progress custom-progress-success">
-                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <!-- <span class="fund-raised d-block">12 people assisted with raised of R3,000</span> -->
-              </div>
-            </div>
-           
           </div>
+
+
+          <div class="card fundraise-item">
+            <div style="height: 320px; width: 100%; overflow: hidden"><img src="images/7.jpeg" alt="Image placeholder">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title"><a href="#">Food Hamper</a></h3>
+              <p class="card-text">Some of the recipients of monthly food hamper handouts at Chatsworth community..</p>
+              <span class="donation-time mb-3 d-block">Thank You</span>
+              <div class="progress custom-progress-success">
+                <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28"
+                  aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <!-- <span class="fund-raised d-block">12 people assisted with raised of R3,000</span> -->
+            </div>
+          </div>
+
+          <div class="card fundraise-item">
+            <div style="height: 320px; width: 100%; overflow: hidden"><img src="images/3.jpeg" alt="Image placeholder">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title"><a href="#">Patient of the year</a></h3>
+              <p class="card-text">Tanya Mark picture with CHO volunteer Seetha Govender. Tanya was crowned patient of
+                the year 2022 after the organisation saw her dedication to her recovery despite her circumstances she
+                always thrive to be better.</p>
+              <span class="donation-time mb-3 d-block">Thank You</span>
+              <div class="progress custom-progress-success">
+                <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28"
+                  aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <!-- <!-- <span class="fund-raised d-block">12 people assisted with raised of R3,000</span> --> -->
+            </div>
+          </div>
+
+
+          <div class="card fundraise-item">
+            <div style="height: 320px; width: 100%; overflow: hidden"><img src="images/4.jpeg" alt="Image placeholder">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title"><a href="#">Nurse Prudence</a></h3>
+              <p class="card-text">Nurse Prudence picture with Mr Pillay during one of the monthly vital check-up.</p>
+              <span class="donation-time mb-3 d-block">Thank You</span>
+              <div class="progress custom-progress-success">
+                <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28"
+                  aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <!-- <span class="fund-raised d-block">12 people assisted with raised of R3,000</span> -->
+            </div>
+          </div>
+
+
+          <div class="card fundraise-item">
+            <div style="height: 320px; width: 100%; overflow: hidden"><img src="images/5.jpeg" alt="Image placeholder">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title"><a href="#">CHO’s objective</a></h3>
+              <p class="card-text">Part of CHO’s objective is to give patients holistic approach to help them recover
+                and be able to aid themselves. In the picture caregiver Nombali assisting Mr. Gordon on his diet and
+                living a healthy lifestyle.</p>
+              <span class="donation-time mb-3 d-block">Thank You</span>
+              <div class="progress custom-progress-success">
+                <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28"
+                  aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <!-- <span class="fund-raised d-block">12 people assisted with raised of R3,000</span> -->
+            </div>
+          </div>
+
+          <div class="card fundraise-item">
+            <div style="height: 320px; width: 100%; overflow: hidden"><img src="images/new/image5.jpg"
+                alt="Image placeholder"></div>
+            <div class="card-body">
+              <h3 class="card-title"><a href="#">Newlands Community weekly visit</a></h3>
+              <p class="card-text">Mr Mazibuko captured with CHO caregiver Nombali during Newlands Community weekly
+                visit for vital check, home based care and lifestyle and diet advise session.</p>
+              <span class="donation-time mb-3 d-block">Thank You</span>
+              <div class="progress custom-progress-success">
+                <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28"
+                  aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <!-- <span class="fund-raised d-block">12 people assisted with raised of R3,000</span> -->
+            </div>
+          </div>
+
         </div>
+      </div>
       <!-- </div> -->
     </div>
   </div> <!-- .section -->
@@ -356,7 +470,8 @@
           <p class="lead">Some of our generous donors that have contributed to this meaningful cause.</p>
           <p>Without you we would not be able to assist our communities.</p>
           <!-- <p class="mb-5"><a class="link-underline">View All Donations</a></p> -->
-          <div class="mb-0"><a href="donate.html" class="btn btn-dark text-white px-3 py-2">View All Donations</a> </div>
+          <div class="mb-0"><a href="donate.html" class="btn btn-dark text-white px-3 py-2">View All Donations</a>
+          </div>
 
         </div>
       </div>
@@ -370,7 +485,7 @@
               <h2>African Bank</h2>
               <span class="donation-time mb-3 d-block">Thank You</span>
             </div>
-          </div>    
+          </div>
         </div>
 
         <div class="col-md-6 col-lg-3 mb-5">
@@ -380,20 +495,20 @@
               <h2>Ethekwini Municipality Grant In Aid</h2>
               <span class="donation-time mb-3 d-block">Thank You</span>
             </div>
-          </div>    
+          </div>
         </div>
         <div class="col-md-6 col-lg-3 mb-5">
           <div class="person-donate text-center">
-            <div>  <img src="images/donors/image5.png" alt="Image placeholder" class="img-fluid"></div>
+            <div> <img src="images/donors/image5.png" alt="Image placeholder" class="img-fluid"></div>
             <div class="donate-info">
               <h2>FNB</h2>
               <span class="donation-time mb-3 d-block">Thank You</span>
             </div>
-          </div>    
+          </div>
         </div>
 
-       
-        
+
+
 
         <div class="col-md-6 col-lg-3 mb-5">
           <div class="person-donate text-center">
@@ -402,61 +517,61 @@
               <h2>Gorimas</h2>
               <span class="donation-time mb-3 d-block">Thank You</span>
             </div>
-          </div>    
+          </div>
         </div>
         <div class="col-md-6 col-lg-3 mb-5">
           <div class="person-donate text-center">
-            <div>   <img src="images/donors/ics.png" alt="Image placeholder" class="img-fluid"></div>
+            <div> <img src="images/donors/ics.png" alt="Image placeholder" class="img-fluid"></div>
             <div class="donate-info">
               <h2>ICS</h2>
               <span class="donation-time mb-3 d-block">Thank You</span>
             </div>
-          </div>    
+          </div>
         </div>
 
-        
+
         <div class="col-md-6 col-lg-3 mb-5">
           <div class="person-donate text-center">
-            <div>   <img src="images/donors/mergon.png" alt="Image placeholder" class="img-fluid"></div>
+            <div> <img src="images/donors/mergon.png" alt="Image placeholder" class="img-fluid"></div>
             <div class="donate-info">
               <h2>Mergon</h2>
               <span class="donation-time mb-3 d-block">Thank You</span>
             </div>
-          </div>    
+          </div>
         </div>
 
 
         <div class="col-md-6 col-lg-3 mb-5">
           <div class="person-donate text-center">
-            <div>   <img src="images/donors/image4.png" alt="Image placeholder" class="img-fluid"></div>
+            <div> <img src="images/donors/image4.png" alt="Image placeholder" class="img-fluid"></div>
             <div class="donate-info">
               <h2>Roche</h2>
               <span class="donation-time mb-3 d-block">Thank You</span>
             </div>
-          </div>    
+          </div>
         </div>
 
-       
+
 
         <div class="col-md-6 col-lg-3 mb-5">
           <div class="person-donate text-center">
-            <div>   <img src="images/donors/image7.png" alt="Image placeholder" class="img-fluid"></div>
+            <div> <img src="images/donors/image7.png" alt="Image placeholder" class="img-fluid"></div>
             <div class="donate-info">
               <h2>Sibaya</h2>
               <span class="donation-time mb-3 d-block">Thank You</span>
             </div>
-          </div>    
+          </div>
         </div>
 
-       
+
         <div class="col-md-6 col-lg-3 mb-5">
           <div class="person-donate text-center">
-            <div>   <img src="images/donors/triton.png" alt="Image placeholder" class="img-fluid"></div>
+            <div> <img src="images/donors/triton.png" alt="Image placeholder" class="img-fluid"></div>
             <div class="donate-info">
               <h2>Triton Clothing</h2>
               <span class="donation-time mb-3 d-block">Thank You</span>
             </div>
-          </div>    
+          </div>
         </div>
 
       </div>
@@ -474,16 +589,19 @@
         </div>
         <div class="modal-body">
           <h4 class="mb-3">OUR MISSION</h4>
-          <p class="mb-4">To provide a customized medical support program to ensure rapid recovery in the comfort of the patient’s own home; hence decreasing the chances of re-admission to hospital whilst increasing the patient’s reintegration back into the family and society in general.</p>
+          <p class="mb-4">To provide a customized medical support program to ensure rapid recovery in the comfort of the
+            patient’s own home; hence decreasing the chances of re-admission to hospital whilst increasing the patient’s
+            reintegration back into the family and society in general.</p>
           <h4 class="mb-3">OUR VISION</h4>
-          <p class="mb-4">To empower chronic disease survivors and their families to get access to the best long term, good quality care, and rehabilitation.</p>
+          <p class="mb-4">To empower chronic disease survivors and their families to get access to the best long term,
+            good quality care, and rehabilitation.</p>
         </div>
       </div>
     </div>
   </div>
 
   <div class="featured-section overlay-color-2" style="background-image: url('images/bg_3.jpg');">
-    
+
     <div class="container">
       <div class="row">
 
@@ -494,18 +612,21 @@
         <div class="col-md-6 pl-md-5">
           <span class="featured-text d-block mb-3">Success Stories</span>
           <h2>With your generous donation, we were able to fulfil our objectives of:</h2>
-          <p class="mb-3">⦁	Providing a comprehensive home recovery program to stroke survivors & other chronic illness sufferers.</p>
+          <p class="mb-3">⦁ Providing a comprehensive home recovery program to stroke survivors & other chronic illness
+            sufferers.</p>
           <span class="fund-raised d-block mb-5">We have helped 289 survivors</span>
 
-          <p><a href="#" data-toggle="modal" data-target="#fullStory" class="btn btn-dark btn-hover-info py-3 px-5">Read The Full Story</a></p>
+          <p><a href="#" data-toggle="modal" data-target="#fullStory" class="btn btn-dark btn-hover-info py-3 px-5">Read
+              The Full Story</a></p>
         </div>
-        
+
       </div>
     </div>
 
   </div> <!-- .featured-donate -->
 
-  <div class="modal fade" id="whatStrokeIs" tabindex="-1" role="dialog" aria-labelledby="whatStrokeIsLabel" aria-hidden="true">
+  <div class="modal fade" id="whatStrokeIs" tabindex="-1" role="dialog" aria-labelledby="whatStrokeIsLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -515,16 +636,21 @@
           </button>
         </div>
         <div class="modal-body">
-       <p>A stroke is a medical emergency.</p>
-       <p>Symptoms of stroke include trouble walking, speaking and understanding, as well as paralysis or numbness of the face, arm or leg.</p>
-       <p>In a simplest term this can be described as Damage to the brain from interruption of its blood supply. Can be likened to a lightening bolt that strikes ones brain. </p>
-       <p>Depending which area it strikes , it leaves the victim with different and individual deficits . Most common deficits are lack of speech, inabilty to use one side of the body, hearing impairment . From being an independent totally functional person , it can leave a person 100 % disabled.</p>
+          <p>A stroke is a medical emergency.</p>
+          <p>Symptoms of stroke include trouble walking, speaking and understanding, as well as paralysis or numbness of
+            the face, arm or leg.</p>
+          <p>In a simplest term this can be described as Damage to the brain from interruption of its blood supply. Can
+            be likened to a lightening bolt that strikes ones brain. </p>
+          <p>Depending which area it strikes , it leaves the victim with different and individual deficits . Most common
+            deficits are lack of speech, inabilty to use one side of the body, hearing impairment . From being an
+            independent totally functional person , it can leave a person 100 % disabled.</p>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="comingHomeOrg" tabindex="-1" role="dialog" aria-labelledby="comingHomeOrgLabel" aria-hidden="true">
+  <div class="modal fade" id="comingHomeOrg" tabindex="-1" role="dialog" aria-labelledby="comingHomeOrgLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -535,13 +661,16 @@
           </button>
         </div>
         <div class="modal-body">
-          Coming Home Organisation  engages and collaborates with organisations, concerned citizens and professionals to build resilient and responsive communities where access and opportunities to health and healthcare education  is advanced.
+          Coming Home Organisation engages and collaborates with organisations, concerned citizens and professionals to
+          build resilient and responsive communities where access and opportunities to health and healthcare education
+          is advanced.
         </div>
       </div>
     </div>
   </div>
 
-  <div class="modal fade" id="healthcareEdu" tabindex="-1" role="dialog" aria-labelledby="healthcareEduLabel" aria-hidden="true">
+  <div class="modal fade" id="healthcareEdu" tabindex="-1" role="dialog" aria-labelledby="healthcareEduLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -551,15 +680,16 @@
           </button>
         </div>
         <div class="modal-body">
-        <p>Coming Home Organisation enjoys strategic partnerships with local, national and international partners to enhance this lifelong experience by</p>
-        <ul>
-          <li>Advocating for quality ECD, primary, secondary and tertiary education</li>
-          <li>Creating an enabling environment by influencing policy and
-          </li>
-          <li>Contributing to leadership and capacity development in education</li>
-        </ul>
+          <p>Coming Home Organisation enjoys strategic partnerships with local, national and international partners to
+            enhance this lifelong experience by</p>
+          <ul>
+            <li>Advocating for quality ECD, primary, secondary and tertiary education</li>
+            <li>Creating an enabling environment by influencing policy and
+            </li>
+            <li>Contributing to leadership and capacity development in education</li>
+          </ul>
         </div>
-       
+
       </div>
     </div>
   </div>
@@ -576,12 +706,12 @@
         <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
           <div class="post-entry">
             <a href="#" class="mb-3 img-wrap " style="height: 200px; width: 100%; overflow: hidden">
-              <img src="images/download.jfif"  alt="Image placeholder" class="img-fluid">
+              <img src="images/download.jfif" alt="Image placeholder" class="img-fluid">
             </a>
             <h3><a href="#">What stroke is and how it affect lives</a></h3>
             <span class="date mb-4 d-block text-muted">July 26, 2022</span>
             <p>A stroke is a medical emergency. Symptoms of stroke include trouble walking, s...
-              </p>
+            </p>
             <p><a href="#" class="link-underline" data-toggle="modal" data-target="#whatStrokeIs">Read More</a></p>
           </div>
         </div>
@@ -590,9 +720,9 @@
             <a href="#" class="mb-3 img-wrap" style="height: 200px; width: 100%; overflow: hidden">
               <img src="images/download (1).jfif" alt="Image placeholder" class="img-fluid">
             </a>
-            <h3><a href="#">Coming Home Organisation  engages and collaborates with organisations</a></h3>
+            <h3><a href="#">Coming Home Organisation engages and collaborates with organisations</a></h3>
             <span class="date mb-4 d-block text-muted">July 26, 2022</span>
-            <p>Coming Home Organisation  engages and collaborates with organisations, concerned citizens and ...</p>
+            <p>Coming Home Organisation engages and collaborates with organisations, concerned citizens and ...</p>
             <p><a href="#" class="link-underline" data-toggle="modal" data-target="#comingHomeOrg">Read More</a></p>
           </div>
         </div>
@@ -603,7 +733,8 @@
             </a>
             <h3><a href="#">Healthcare Education</a></h3>
             <span class="date mb-4 d-block text-muted">July 26, 2022</span>
-            <p>Coming Home Organisation enjoys strategic partnerships with local, national and international partners ...</p>
+            <p>Coming Home Organisation enjoys strategic partnerships with local, national and international partners
+              ...</p>
             <p><a href="#" class="link-underline" data-toggle="modal" data-target="#healthcareEdu">Read More</a></p>
           </div>
         </div>
@@ -612,7 +743,7 @@
   </div> <!-- .section -->
 
   <div class="featured-section overlay-color-2" style="background-image: url('images/bg_2.jpg');">
-    
+
     <div class="container">
       <div class="row">
 
@@ -623,7 +754,7 @@
         <div class="col-md-6 pl-md-5">
 
           <div class="form-volunteer">
-            
+
             <h2>Be A Volunteer Today</h2>
             <form action="#" method="post">
               <div class="form-group">
@@ -636,7 +767,8 @@
               </div>
               <div class="form-group">
                 <!-- <label for="v_message">Email</label> -->
-                <textarea name="v_message" id="" cols="30" rows="3" class="form-control py-2" placeholder="Write your message"></textarea>
+                <textarea name="v_message" id="" cols="30" rows="3" class="form-control py-2"
+                  placeholder="Write your message"></textarea>
                 <!-- <input type="text" class="form-control py-2" id="email"> -->
               </div>
               <div class="form-group">
@@ -645,7 +777,7 @@
             </form>
           </div>
         </div>
-        
+
       </div>
     </div>
 
@@ -655,16 +787,128 @@
     <div class="container">
       <div class="row mb-5">
         <div class="col-md-6 col-lg-4">
-          <h3 class="heading-section">About Us</h3>  
-          <p class="lead">We are dedicated to providing a customized home based care service to patients affected by chronic illnesses. </p>
-          <p class="mb-5">We aim to empower them and their families to get access to the best long term, good quality care and rehabilitation. </p>
+          <h3 class="heading-section">About Us</h3>
+          <p class="lead">We are dedicated to providing a customized home based care service to patients affected by
+            chronic illnesses. </p>
+          <p class="mb-5">We aim to empower them and their families to get access to the best long term, good quality
+            care and rehabilitation. </p>
           <img src="images/Coming home logo.jpg" style="width: 50px" alt="" class="img-fluid rounded-full mb-2">
         </div>
         <div class="col-md-6 col-lg-4">
           <h3 class="heading-section">Recent Blog</h3>
-          <div class="block-21 d-flex mb-4">
+          <div class="block-21 d-flex mb-4" data-toggle="modal" data-target="#successStories">
             <figure class="mr-3">
               <img src="images/new/279677e0-b749-496d-b9f5-e2984f571fa8.jpg" alt="" class="img-fluid">
+            </figure>
+            <div class="text">
+              <h3 class="heading"><a href="#">Success Stories</a></h3>
+              <div class="meta">
+                <div><a href="#"><span class="icon-calendar"></span> July 29, 2021</a></div>
+                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="successStories" tabindex="-1" role="dialog" aria-labelledby="successStoriesLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="successStoriesLabel">Success Stories</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body" style="color: black;">
+                  2022
+
+                  <p> I am Avashna Moodley and I am a stroke veteran. Why veteran … I’ve got the scars , had a
+                    meaningful life pretrauma , didn’t have a road map to recovery and definitely had the long service .
+                    My stroke happened more than 11 years ago.</p>
+
+                  <p> My life pre stroke was like any other , we were a family of 4 , me ,my husband and 2 kids who were
+                    in primary school. Like most young families , we lived on our own , this meant we didn’t have a
+                    village to raise our children. This meant a routine filled schedule .My husband ran his family
+                    business . My business was at its peak , I either sold or franchised . I was young ,ambitious and
+                    courageous so I decided to franchise my business that I started on my own strength & intelligence .
+                    Together with my precious family this was my empire , big or small , it was my success .</p>
+
+                  <p> I planned out my whole life to never be where I am right now .</p>
+
+                  <p> I awoke on the morning of Christmas Eve (2011) then quickly realized that I could not move . I
+                    tried to get off the bed to walk to the bathroom , to tell my husband that something was wrong – my
+                    body was frozen in time . I was so confused . </p>
+
+                  <p> After almost 11 years , I still can’t believe this day ever happened. It’s like I’m watched a true
+                    story movie .</p>
+
+                  <br>
+
+
+                  <p> At 41 years old I had a stroke . My empire was turned upside down . There was no warning signs ,
+                    no time to get my affairs in order , to prepare my kids for their mother who could no longer walk ,
+                    talk , read , write or recall her life .</p>
+
+                  <p> For the next 19 days in ICU , I would beg the nurse to call my husband so he can bring my clothes
+                    to take me home . I would pull out all the drips in preparation to go home …. My safe place .</p>
+                  <p> The doctors discharged me very reluctantly so that I could see my eldest child off to his first
+                    day of High school. Reality hit me , the first night at home , I wanted to go to my new safe place
+                    …. The hospital.</p>
+
+                  <p> I felt alone , like I didn’t belong . My family could only visit me in ICU during set periods of
+                    time . They were totally unprepared and unable to read my desperate attempts at communicating
+                    through body language and other non-verbal cues . The frustration went both ways and we all soon
+                    realized how unprepared we were to tackle the after effects of a stroke .</p>
+
+
+                  <p> My head was like a freight train with the brake off. Thoughts and questions rushing around. </p>
+                  <p> I could hear myself speaking clearly to my family and friends but the sound coming from my mouth
+                    didn’t match those formed in my mind .</p>
+
+
+                  <p> According to my neurologist , I had the worst stroke on the scale – 3 in 1 and today I am grateful
+                    to say that I have recovered 99.5% of my physical and mental abilities . </p>
+
+
+                  <br>
+
+                  <p> I look at my stroke as I was stripped of my stuff , I had to rebuild , layer by layer. It was
+                    almost an initiation of sorts. Through my experience I’ve realized that recovery from any life
+                    threatening condition is not something you can not do on your own , because when you are ill you
+                    become mentally, physically and emotionally deprived of the fuel you need to recover fully. This was
+                    the catalyst in setting up a non profit organization called Coming Home . </p>
+                  <p> Once you stop using your pain to navigate your world , you set your recovery in motion .Meaning
+                    your recovery takes place in your mind and then your body will follow . </p>
+                  <p> This is 1st step that me and my fellow stroke veterans show you. </p>
+                  <p> Your doctors play a crucial role , your rehab team play an equally crucial role but they don’t
+                    have first hand experience. We talk to your team and help map out your recovery road , we know how
+                    you feel, we don’t see your mood changes as stubbornness and laziness. We get you , we get your
+                    every need and we know your needs will change cos so has ours . Once you join our Coming Home family
+                    , you are never alone and your family is never alone </p>
+
+
+
+                  <br>
+
+
+                  <p> I view my stroke as a tree under whose shade I did not plan to sit . Nothing grows in the shade .
+                  </p>
+                  <p> Do you choose to sit under your stroke tree ? The only power you have , is the power of choice .
+                  </p>
+                  <p> You’ve have a meaningful life before and you can have a meaningful life now .</p>
+
+                  <p> It’s your choice </p>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="block-21 d-flex mb-4" data-toggle="modal" data-target="#communityDevelopment">
+            <figure class="mr-3">
+              <img src="images/new/4dd03165-72d6-43de-99ed-63405b8ff96d.jpg" alt="" class="img-fluid">
             </figure>
             <div class="text">
               <h3 class="heading"><a href="#">Community Development</a></h3>
@@ -676,12 +920,29 @@
             </div>
           </div>
 
-          <div class="block-21 d-flex mb-4">
+          <div class="modal fade" id="communityDevelopment" tabindex="-1" role="dialog" aria-labelledby="communityDevelopmentLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="communityDevelopmentLabel">Community Development</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img src="/images/download.jpg" style="width: 100%;" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="block-21 d-flex mb-4"  data-toggle="modal" data-target="#lifeAfter">
             <figure class="mr-3">
-              <img src="images/new/4dd03165-72d6-43de-99ed-63405b8ff96d.jpg" alt="" class="img-fluid">
+              <img src="images/new/6e7ce383-86a1-4d70-b9d1-564f11e862b8.jpg" alt="" class="img-fluid">
             </figure>
             <div class="text">
-              <h3 class="heading"><a href="#">Life Is Short So Be Kind</a></h3>
+              <h3 class="heading"><a href="#">Life after stroke</a></h3>
               <div class="meta">
                 <div><a href="#"><span class="icon-calendar"></span> July 29, 2021</a></div>
                 <div><a href="#"><span class="icon-person"></span> Admin</a></div>
@@ -690,16 +951,21 @@
             </div>
           </div>
 
-          <div class="block-21 d-flex mb-4">
-            <figure class="mr-3">
-              <img src="images/new/6e7ce383-86a1-4d70-b9d1-564f11e862b8.jpg" alt="" class="img-fluid">
-            </figure>
-            <div class="text">
-              <h3 class="heading"><a href="#">Monthly healthy food drive that feeds the family of 4</a></h3>
-              <div class="meta">
-                <div><a href="#"><span class="icon-calendar"></span> July 29, 2021</a></div>
-                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+          <div class="modal fade" id="lifeAfter" tabindex="-1" role="dialog" aria-labelledby="lifeAfterLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="lifeAfterLabel">Life after stroke</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <!-- <img src="/images/Life After stroke (1).pdf" style="width: 100%;" /> -->
+                  <a href="/images/Life After stroke (1).pdf" target="_blank">Click here to view</a>
+                  <embed src="/images/Life After stroke (1).pdf" style="width: 100%; height: 100%"  />
+                </div>
               </div>
             </div>
           </div>
@@ -707,35 +973,45 @@
         <div class="col-md-6 col-lg-4">
           <div class="block-23">
             <h3 class="heading-section">Get Connected</h3>
-              <ul> 
-                <li><span class="icon icon-map-marker"></span><span class="text"></span></li>
-                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+27 615 019 002</span></a></li>
-                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">cho@hospital2home.co.za</span></a></li>
-                <li><a href="https://m.facebook.com/hospitaltohome/"><span class="icon icon-facebook"></span><span class="text">coming home</span></a></li>
-                <li><a href="https://www.instagram.com/cominghome_sa/"><span class="icon icon-instagram"></span><span class="text">cominghome_sa</span></a></li>
-                <li><a href="https://www.youtube.com/channel/UCyOg1xugzxmBPjaPnSOHzcw"><span class="icon icon-youtube"></span><span class="text">Coming Home Organisation</span></a></li>
-              </ul>
-            </div>
+            <ul>
+              <li><span class="icon icon-map-marker"></span><span class="text"></span></li>
+              <li><a href="#"><span class="icon icon-phone"></span><span class="text">+27 615 019 002</span></a></li>
+              <li><a href="#"><span class="icon icon-envelope"></span><span
+                    class="text">cho@hospital2home.co.za</span></a></li>
+              <li><a href="https://m.facebook.com/hospitaltohome/"><span class="icon icon-facebook"></span><span
+                    class="text">coming home</span></a></li>
+              <li><a href="https://www.instagram.com/cominghome_sa/"><span class="icon icon-instagram"></span><span
+                    class="text">cominghome_sa</span></a></li>
+              <li><a href="https://www.youtube.com/channel/UCyOg1xugzxmBPjaPnSOHzcw"><span
+                    class="icon icon-youtube"></span><span class="text">Coming Home Organisation</span></a></li>
+            </ul>
+          </div>
         </div>
-        
-        
+
+
       </div>
       <div class="row pt-5">
         <div class="col-md-12 text-center">
-          
-            <p>
+
+          <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ion-ios-heart text-danger" aria-hidden="true"></i> by <a href="" target="_blank" >Halo Republic</a>
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
+            <i class="ion-ios-heart text-danger" aria-hidden="true"></i> by <a href="" target="_blank">Halo Republic</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-          
+          </p>
+
         </div>
       </div>
     </div>
   </footer>
 
   <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#F96D00" />
+    </svg></div>
 
 
   <script src="js/jquery.min.js"></script>
@@ -750,12 +1026,14 @@
   <script src="js/bootstrap-datepicker.js"></script>
 
   <script src="js/jquery.fancybox.min.js"></script>
-  
+
   <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-    
-  </body>
+
+</body>
+
 </html>

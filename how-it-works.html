@@ -1,34 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Coming Home</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,500|Dosis:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/aos.css">
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/fancybox.min.css">
 
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
+<head>
+  <title>Coming Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  </head>
-  <body>
-    
+  <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,500|Dosis:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/ionicons.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.timepicker.css">
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="css/fancybox.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-      <a class="text-sm md:navbar-brand" href="index.html"><img src="images/Coming home logo.jpg" style="width: 50px" alt="" class="rounded-circle mr-2">Coming Home Organisation</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="text-sm md:navbar-brand" href="index.html"><img src="images/Coming home logo.jpg" style="width: 50px"
+          alt="" class="rounded-circle mr-2">Coming Home Organisation</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
       </button>
 
@@ -43,16 +47,17 @@
           <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </div>
-    </div>  
-    <div class="d-flex justify-content-center"> 
-      <button class="btn btn-danger btn-sm"  data-toggle="modal" data-target="#donateNow">
-      <a href="#">  Donate</a>
-    </button>
-   </div>
-    
+    </div>
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#donateNow">
+        <a href="#"> Donate</a>
+      </button>
+    </div>
+
   </nav>
 
-  <div class="modal fade" id="donateNow" tabindex="-1" role="dialog" aria-labelledby="donateNowLabel" aria-hidden="true">
+  <div class="modal fade" id="donateNow" tabindex="-1" role="dialog" aria-labelledby="donateNowLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -63,637 +68,673 @@
         </div>
         <div class="modal-body">
           <script type="text/javascript">
-            function customQuantitiesPayFast (formReference) {
-            formReference['amount'].value = formReference['amount'].value * formReference['custom_quantity'].value;
-            return true;
+            function customQuantitiesPayFast(formReference) {
+              formReference['amount'].value = formReference['amount'].value * formReference['custom_quantity'].value
+              return true
             }
-            </script>
-             <script type="text/javascript">
-            function actionPayFastJavascript ( formReference ) {
-            let shippingValidOrOff = typeof shippingValid !== 'undefined' ? shippingValid : true; 
-            let customValid = shippingValidOrOff ? customQuantitiesPayFast( formReference ) : false;
-             if (typeof shippingValid !== 'undefined' && !shippingValid) {
-            return false;
+          </script>
+          <script type="text/javascript">
+            function actionPayFastJavascript(formReference) {
+              let shippingValidOrOff = typeof shippingValid !== 'undefined' ? shippingValid : true
+              let customValid = shippingValidOrOff ? customQuantitiesPayFast(formReference) : false
+              if (typeof shippingValid !== 'undefined' && !shippingValid) {
+                return false
+              }
+              if (typeof customValid !== 'undefined' && !customValid) {
+                return false
+              }
+              return true
             }
-            if (typeof customValid !== 'undefined' && !customValid) {
-            return false;
-            }
-            return true;
-             }
-            </script>
-            <form onsubmit="return actionPayFastJavascript( this );" name="PayFastPayNowForm" action="https://www.payfast.co.za/eng/process" method="post">
+          </script>
+          <form onsubmit="return actionPayFastJavascript( this );" name="PayFastPayNowForm"
+            action="https://www.payfast.co.za/eng/process" method="post">
             <input required type="hidden" name="cmd" value="_paynow">
             <input required type="hidden" name="receiver" pattern="[0-9]" value="13975574">
             <table>
-            <tr>
-            <td><label id="PayFastAmountLabel" for="PayFastAmount">Amount: </label></td>
-            <td><input required id="PayFastAmount" type="number" step=".01" name="amount" min="50.00" placeholder="50.00" value="50"></td>
-            </tr>
+              <tr>
+                <td><label id="PayFastAmountLabel" for="PayFastAmount">Amount: </label></td>
+                <td><input required id="PayFastAmount" type="number" step=".01" name="amount" min="50.00"
+                    placeholder="50.00" value="50"></td>
+              </tr>
             </table>
-            
+
             <!-- <table>
             <tr>
             <td><label for="custom_quantity">Quantity: </label></td>
             <td><input required id="custom_quantity" type="number" name="custom_quantity" value="1"></td>
             </tr>
             </table> -->
-            
+
             <input required type="hidden" name="item_name" maxlength="255" value="Donate">
-            <input type="hidden" name="item_description" maxlength="255" value="We are dedicated to providing a customized home based care service to patients affected by chronic illnesses.">
+            <input type="hidden" name="item_description" maxlength="255"
+              value="We are dedicated to providing a customized home based care service to patients affected by chronic illnesses.">
             <table>
-            <tr>
-            <td colspan=2 align=center>
-            <input type="image" src="https://www.payfast.co.za/images/buttons/DonateNow/Red-Large-Round-DonateNow.png" alt="Donate Now" title="Donate Now with PayFast">
-            </td>
-            </tr>
+              <tr>
+                <td colspan=2 align=center>
+                  <input type="image"
+                    src="https://www.payfast.co.za/images/buttons/DonateNow/Red-Large-Round-DonateNow.png"
+                    alt="Donate Now" title="Donate Now with PayFast">
+                </td>
+              </tr>
             </table>
-            </form>
+          </form>
         </div>
       </div>
     </div>
   </div>
   <!-- END nav -->
-  
+
   <div class="block-31" style="position: relative;">
     <div class="owl-carousel loop-block-31 ">
-      <div class="block-30 block-30-sm item" style="background-image: url('images/img_2.jpg');" data-stellar-background-ratio="0.5">
+      <div class="block-30 block-30-sm item" style="background-image: url('images/img_2.jpg');"
+        data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-7">
               <h2 class="heading mb-5">How It Works</h2>
-              <p style="display: inline-block;"><a href="https://www.youtube.com/embed/4SUeF50dN_U"  data-fancybox class="ftco-play-video d-flex"><span class="play-icon-wrap align-self-center mr-4"><span class="ion-ios-play"></span></span> <span class="align-self-center">How It Works</span></a></
+              <p style="display: inline-block;"><a href="https://www.youtube.com/embed/4SUeF50dN_U" data-fancybox
+                  class="ftco-play-video d-flex"><span class="play-icon-wrap align-self-center mr-4"><span
+                      class="ion-ios-play"></span></span> <span class="align-self-center">How It Works</span></a></
+                  </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row align-items-center">
+
+          <div class="col-md-7 order-md-2 mb-md-0" style="height: 20px; width: 100%; overflow: hidden">
+            <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-md-5 pr-md-5 order-md-1">
+            <div class="block-41">
+              <div class="block-41-subheading d-flex">
+                <div class="block-41-number">Step 01</div>
+              </div>
+              <h2 class="block-41-heading mb-3">Contact Initiated</h2>
+              <div class="block-41-text">
+                <p>Contact initiated by CH to Hospital and Patient.</p>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- .row -->
+
+        <div class="row align-items-center">
+          <div class="col-md-7 mb-md-0" style="height: 20px; width: 100%; overflow: hidden">
+            <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-md-5 pl-md-5">
+            <div class="block-41">
+              <div class="block-41-subheading d-flex">
+                <div class="block-41-number">Step 02</div>
+              </div>
+              <h2 class="block-41-heading mb-3">Needs Assessment</h2>
+              <div class="block-41-text">
+                <p>Needs assessment conducted by doctor on discharge of patient. (NA)</p>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- .row -->
+
+        <div class="row align-items-center">
+
+          <div class="col-md-7 order-md-2 mb-md-0" style="height: 20px; width: 100%; overflow: hidden">
+            <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-md-5 pr-md-5 order-md-1">
+            <div class="block-41">
+              <div class="block-41-subheading d-flex">
+                <div class="block-41-number">Step 03</div>
+              </div>
+              <h2 class="block-41-heading mb-3">Family Home</h2>
+              <div class="block-41-text">
+                <p>Family home is assessed for customisation {HA}.</p>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- .row -->
+
+        <div class="row align-items-center">
+          <div class="col-md-7 mb-md-0" style="height: 20px; width: 100%; overflow: hidden">
+            <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-md-5 pl-md-5">
+            <div class="block-41">
+              <div class="block-41-subheading d-flex">
+                <div class="block-41-number">Step 04</div>
+              </div>
+              <h2 class="block-41-heading mb-3">Family Assessment</h2>
+              <div class="block-41-text">
+                <p>Family assessment conducted in home - (FA)</p>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- .row -->
+
+        <div class="row align-items-center">
+
+          <div class="col-md-7 order-md-2 mb-md-0" style="height: 20px; width: 100%; overflow: hidden">
+            <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-md-5 pr-md-5 order-md-1">
+            <div class="block-41">
+              <div class="block-41-subheading d-flex">
+                <div class="block-41-number">Step 05</div>
+              </div>
+              <h2 class="block-41-heading mb-3">CH Carer</h2>
+              <div class="block-41-text">
+                <p>CH carer allocated to manage the transition from hospital to home (CA).</p>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- .row -->
+
+        <div class="row align-items-center">
+          <div class="col-md-7 mb-md-0" style="height: 20px; width: 100%; overflow: hidden">
+            <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-md-5 pl-md-5">
+            <div class="block-41">
+              <div class="block-41-subheading d-flex">
+                <div class="block-41-number">Step 06</div>
+              </div>
+              <h2 class="block-41-heading mb-3">Wheel and Spoke</h2>
+              <div class="block-41-text">
+                <p>Wheel and Spoke recovery plan implemented_(RI)</p>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- .row -->
+
+        <div class="row align-items-center">
+
+          <div class="col-md-7 order-md-2 mb-md-0" style="height: 20px; width: 100%; overflow: hidden">
+            <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-md-5 pr-md-5 order-md-1">
+            <div class="block-41">
+              <div class="block-41-subheading d-flex">
+                <div class="block-41-number">Step 07</div>
+              </div>
+              <h2 class="block-41-heading mb-3">Carer & Patient</h2>
+              <div class="block-41-text">
+                <p>Carer and patient review by family, carer, patient & CH manager-(CPR).</p>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- .row -->
+
+        <div class="row align-items-center">
+          <div class="col-md-7 mb-md-0" style="height: 20px; width: 100%; overflow: hidden">
+            <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-md-5 pl-md-5">
+            <div class="block-41">
+              <div class="block-41-subheading d-flex">
+                <div class="block-41-number">Step 08</div>
+              </div>
+              <h2 class="block-41-heading mb-3">CHO exits</h2>
+              <div class="block-41-text">
+                <p>CHO exits once patient is functionality independent-(E)</p>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- .row -->
+        <div class="row align-items-center">
+
+          <div class="col-md-7 order-md-2 mb-md-0" style="height: 20px; width: 100%; overflow: hidden">
+            <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
+          </div>
+
+          <div class="col-md-5 pr-md-5 order-md-1">
+            <div class="block-41">
+              <div class="block-41-subheading d-flex">
+                <div class="block-41-number">Step 09</div>
+              </div>
+              <h2 class="block-41-heading mb-3">CHO conducts</h2>
+              <div class="block-41-text">
+                <p>CHO conducts biannual home visits to family and patient-(BI).</p>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- .row -->
+      </div>
+    </div>
+
+    <div class="site-section fund-raisers">
+      <div class="container">
+        <div class="row mb-3 justify-content-center">
+          <div class="col-md-8 text-center">
+            <h2>Donations</h2>
+            <p class="lead">Some of our generous donors that have contributed to this meaningful cause.</p>
+            <p>Without you we would not be able to assist our communities.</p>
+            <div class="mb-0"><a href="donate.html" class="btn btn-dark text-white px-3 py-2">View All Donation</a>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 mb-5">
+            <div class="person-donate text-center">
+              <div> <img src="images/donors/image1.png" alt="Image placeholder" class="img-fluid"></div>
+              <div class="donate-info">
+                <h2>Ethekwini Municipality Grant In Aid</h2>
+                <span class="donation-time mb-3 d-block">Thank You</span>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="col-md-6 col-lg-3 mb-5">
+            <div class="person-donate text-center">
+              <div> <img src="images/donors/image3.png" alt="Image placeholder" class="img-fluid"></div>
+              <div class="donate-info">
+                <h2>Gorimas</h2>
+                <span class="donation-time mb-3 d-block">Thank You</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 mb-5">
+            <div class="person-donate text-center">
+              <div> <img src="images/donors/image4.png" alt="Image placeholder" class="img-fluid"></div>
+              <div class="donate-info">
+                <h2>Roche</h2>
+                <span class="donation-time mb-3 d-block">Thank You</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 mb-5">
+            <div class="person-donate text-center">
+              <div> <img src="images/donors/image5.png" alt="Image placeholder" class="img-fluid"></div>
+              <div class="donate-info">
+                <h2>FNB</h2>
+                <span class="donation-time mb-3 d-block">Thank You</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 mb-5">
+            <div class="person-donate text-center">
+              <div> <img src="images/donors/image6.png" alt="Image placeholder" class="img-fluid"></div>
+              <div class="donate-info">
+                <h2>African Bank</h2>
+                <span class="donation-time mb-3 d-block">Thank You</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 mb-5">
+            <div class="person-donate text-center">
+              <div> <img src="images/donors/image7.png" alt="Image placeholder" class="img-fluid"></div>
+              <div class="donate-info">
+                <h2>Sibaya</h2>
+                <span class="donation-time mb-3 d-block">Thank You</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 mb-5">
+            <div class="person-donate text-center">
+              <div> <img src="images/donors/ics.png" alt="Image placeholder" class="img-fluid"></div>
+              <div class="donate-info">
+                <h2>ICS</h2>
+                <span class="donation-time mb-3 d-block">Thank You</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 mb-5">
+            <div class="person-donate text-center">
+              <div> <img src="images/donors/triton.png" alt="Image placeholder" class="img-fluid"></div>
+              <div class="donate-info">
+                <h2>Triton Clothing</h2>
+                <span class="donation-time mb-3 d-block">Thank You</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 mb-5">
+            <div class="person-donate text-center">
+              <div> <img src="images/donors/mergon.png" alt="Image placeholder" class="img-fluid"></div>
+              <div class="donate-info">
+                <h2>Mergon</h2>
+                <span class="donation-time mb-3 d-block">Thank You</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      
     </div>
-  </div>
-  
-  <div class="site-section">
-    <div class="container">
-      <div class="row align-items-center">
 
-        <div class="col-md-7 order-md-2 mb-md-0"  style="height: 20px; width: 100%; overflow: hidden">
-          <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
-        </div>
+    <div class="featured-section overlay-color-2" style="background-image: url('images/bg_2.jpg');">
 
-        <div class="col-md-5 pr-md-5 order-md-1">
-          <div class="block-41">
-            <div class="block-41-subheading d-flex">
-              <div class="block-41-number">Step 01</div>
-            </div>
-            <h2 class="block-41-heading mb-3">Contact Initiated</h2>
-            <div class="block-41-text">
-              <p>Contact initiated by CH to Hospital and Patient.</p>
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-6 mb-5 mb-md-0">
+            <img src="images/new/image3.jpg" alt="Image placeholder" class="img-fluid">
+          </div>
+
+          <div class="col-md-6 pl-md-5">
+
+            <div class="form-volunteer">
+
+              <h2>Be A Volunteer Today</h2>
+              <form action="#" method="post">
+                <div class="form-group">
+                  <!-- <label for="name">Name</label> -->
+                  <input type="text" class="form-control py-2" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                  <!-- <label for="email">Email</label> -->
+                  <input type="text" class="form-control py-2" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                  <!-- <label for="v_message">Email</label> -->
+                  <textarea name="v_message" id="" cols="30" rows="3" class="form-control py-2"
+                    placeholder="Write your message"></textarea>
+                  <!-- <input type="text" class="form-control py-2" id="email"> -->
+                </div>
+                <div class="form-group">
+                  <input type="submit" class="btn btn-white px-5 py-2" value="Send">
+                </div>
+              </form>
             </div>
           </div>
-        </div>
-        
-      </div> <!-- .row -->
-
-      <div class="row align-items-center">
-        <div class="col-md-7 mb-md-0" style="height: 20px; width: 100%; overflow: hidden">
-          <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
-        </div>
-
-        <div class="col-md-5 pl-md-5">
-          <div class="block-41">
-            <div class="block-41-subheading d-flex">
-              <div class="block-41-number">Step 02</div>
-            </div>
-            <h2 class="block-41-heading mb-3">Needs Assessment</h2>
-            <div class="block-41-text">
-              <p>Needs assessment conducted by doctor on discharge of patient. (NA)</p>
-            </div>
-          </div>
-        </div>
-        
-      </div> <!-- .row -->
-
-      <div class="row align-items-center">
-
-        <div class="col-md-7 order-md-2 mb-md-0" style="height: 20px; width: 100%; overflow: hidden">
-          <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
-        </div>
-
-        <div class="col-md-5 pr-md-5 order-md-1">
-          <div class="block-41">
-            <div class="block-41-subheading d-flex">
-              <div class="block-41-number">Step 03</div>
-            </div>
-            <h2 class="block-41-heading mb-3">Family Home</h2>
-            <div class="block-41-text">
-              <p>Family home is assessed for customisation {HA}.</p>
-            </div>
-          </div>
-        </div>
-        
-      </div> <!-- .row -->
-
-      <div class="row align-items-center">
-        <div class="col-md-7 mb-md-0" style="height: 20px; width: 100%; overflow: hidden">
-          <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
-        </div>
-
-        <div class="col-md-5 pl-md-5">
-          <div class="block-41">
-            <div class="block-41-subheading d-flex">
-              <div class="block-41-number">Step 04</div>
-            </div>
-            <h2 class="block-41-heading mb-3">Family Assessment</h2>
-            <div class="block-41-text">
-              <p>Family assessment conducted in home - (FA)</p>
-            </div>
-          </div>
-        </div>
-        
-      </div> <!-- .row -->
-
-      <div class="row align-items-center">
-
-        <div class="col-md-7 order-md-2 mb-md-0" style="height: 20px; width: 100%; overflow: hidden">
-          <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
-        </div>
-
-        <div class="col-md-5 pr-md-5 order-md-1">
-          <div class="block-41">
-            <div class="block-41-subheading d-flex">
-              <div class="block-41-number">Step 05</div>
-            </div>
-            <h2 class="block-41-heading mb-3">CH Carer</h2>
-            <div class="block-41-text">
-              <p>CH carer allocated to manage the transition from hospital to home (CA).</p>
-            </div>
-          </div>
-        </div>
-        
-      </div> <!-- .row -->
-
-      <div class="row align-items-center">
-        <div class="col-md-7 mb-md-0" style="height: 20px; width: 100%; overflow: hidden">
-          <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
-        </div>
-
-        <div class="col-md-5 pl-md-5">
-          <div class="block-41">
-            <div class="block-41-subheading d-flex">
-              <div class="block-41-number">Step 06</div>
-            </div>
-            <h2 class="block-41-heading mb-3">Wheel and Spoke</h2>
-            <div class="block-41-text">
-              <p>Wheel and Spoke recovery plan implemented_(RI)</p>
-            </div>
-          </div>
-        </div>
-        
-      </div> <!-- .row -->
-
-      <div class="row align-items-center">
-
-        <div class="col-md-7 order-md-2 mb-md-0" style="height: 20px; width: 100%; overflow: hidden">
-          <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
-        </div>
-
-        <div class="col-md-5 pr-md-5 order-md-1">
-          <div class="block-41">
-            <div class="block-41-subheading d-flex">
-              <div class="block-41-number">Step 07</div>
-            </div>
-            <h2 class="block-41-heading mb-3">Carer & Patient</h2>
-            <div class="block-41-text">
-              <p>Carer and patient review by family, carer, patient & CH manager-(CPR).</p>
-            </div>
-          </div>
-        </div>
-        
-      </div> <!-- .row -->
-
-      <div class="row align-items-center">
-        <div class="col-md-7 mb-md-0" style="height: 20px; width: 100%; overflow: hidden">
-          <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
-        </div>
-
-        <div class="col-md-5 pl-md-5">
-          <div class="block-41">
-            <div class="block-41-subheading d-flex">
-              <div class="block-41-number">Step 08</div>
-            </div>
-            <h2 class="block-41-heading mb-3">CHO exits</h2>
-            <div class="block-41-text">
-              <p>CHO exits once patient is functionality independent-(E)</p>
-            </div>
-          </div>
-        </div>
-        
-      </div> <!-- .row -->
-      <div class="row align-items-center">
-
-        <div class="col-md-7 order-md-2 mb-md-0" style="height: 20px; width: 100%; overflow: hidden">
-          <img src="images/Coming home logo.jpg" alt="" class="img-fluid">
-        </div>
-
-        <div class="col-md-5 pr-md-5 order-md-1">
-          <div class="block-41">
-            <div class="block-41-subheading d-flex">
-              <div class="block-41-number">Step 09</div>
-            </div>
-            <h2 class="block-41-heading mb-3">CHO conducts</h2>
-            <div class="block-41-text">
-              <p>CHO conducts biannual home visits to family and patient-(BI).</p>
-            </div>
-          </div>
-        </div>
-        
-      </div> <!-- .row -->
-    </div>
-  </div>
-
-  <div class="site-section fund-raisers">
-    <div class="container">
-      <div class="row mb-3 justify-content-center">
-        <div class="col-md-8 text-center">
-          <h2>Donations</h2>
-          <p class="lead">Some of our generous donors that have contributed to this meaningful cause.</p>
-          <p>Without you we would not be able to assist our communities.</p>
-          <div class="mb-0"><a href="donate.html" class="btn btn-dark text-white px-3 py-2">View All Donation</a></div>
 
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="person-donate text-center">
-            <div> <img src="images/donors/image1.png" alt="Image placeholder" class="img-fluid"></div>
-            <div class="donate-info">
-              <h2>Ethekwini Municipality Grant In Aid</h2>
-              <span class="donation-time mb-3 d-block">Thank You</span>
-            </div>
-          </div>    
-        </div>
+    </div> <!-- .featured-donate -->
 
-        
 
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="person-donate text-center">
-            <div> <img src="images/donors/image3.png" alt="Image placeholder" class="img-fluid"></div>
-            <div class="donate-info">
-              <h2>Gorimas</h2>
-              <span class="donation-time mb-3 d-block">Thank You</span>
-            </div>
-          </div>    
-        </div>
-
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="person-donate text-center">
-            <div>   <img src="images/donors/image4.png" alt="Image placeholder" class="img-fluid"></div>
-            <div class="donate-info">
-              <h2>Roche</h2>
-              <span class="donation-time mb-3 d-block">Thank You</span>
-            </div>
-          </div>    
-        </div>
-
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="person-donate text-center">
-            <div>  <img src="images/donors/image5.png" alt="Image placeholder" class="img-fluid"></div>
-            <div class="donate-info">
-              <h2>FNB</h2>
-              <span class="donation-time mb-3 d-block">Thank You</span>
-            </div>
-          </div>    
-        </div>
-
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="person-donate text-center">
-            <div> <img src="images/donors/image6.png" alt="Image placeholder" class="img-fluid"></div>
-            <div class="donate-info">
-              <h2>African Bank</h2>
-              <span class="donation-time mb-3 d-block">Thank You</span>
-            </div>
-          </div>    
-        </div>
-
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="person-donate text-center">
-            <div>   <img src="images/donors/image7.png" alt="Image placeholder" class="img-fluid"></div>
-            <div class="donate-info">
-              <h2>Sibaya</h2>
-              <span class="donation-time mb-3 d-block">Thank You</span>
-            </div>
-          </div>    
-        </div>
-
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="person-donate text-center">
-            <div>   <img src="images/donors/ics.png" alt="Image placeholder" class="img-fluid"></div>
-            <div class="donate-info">
-              <h2>ICS</h2>
-              <span class="donation-time mb-3 d-block">Thank You</span>
-            </div>
-          </div>    
-        </div>
-
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="person-donate text-center">
-            <div>   <img src="images/donors/triton.png" alt="Image placeholder" class="img-fluid"></div>
-            <div class="donate-info">
-              <h2>Triton Clothing</h2>
-              <span class="donation-time mb-3 d-block">Thank You</span>
-            </div>
-          </div>    
-        </div>
-
-        <div class="col-md-6 col-lg-3 mb-5">
-          <div class="person-donate text-center">
-            <div>   <img src="images/donors/mergon.png" alt="Image placeholder" class="img-fluid"></div>
-            <div class="donate-info">
-              <h2>Mergon</h2>
-              <span class="donation-time mb-3 d-block">Thank You</span>
-            </div>
-          </div>    
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="featured-section overlay-color-2" style="background-image: url('images/bg_2.jpg');">
-    
-    <div class="container">
-      <div class="row">
-
-        <div class="col-md-6 mb-5 mb-md-0">
-          <img src="images/new/image3.jpg" alt="Image placeholder" class="img-fluid">
-        </div>
-
-        <div class="col-md-6 pl-md-5">
-
-          <div class="form-volunteer">
-            
-            <h2>Be A Volunteer Today</h2>
-            <form action="#" method="post">
-              <div class="form-group">
-                <!-- <label for="name">Name</label> -->
-                <input type="text" class="form-control py-2" id="name" placeholder="Enter your name">
-              </div>
-              <div class="form-group">
-                <!-- <label for="email">Email</label> -->
-                <input type="text" class="form-control py-2" id="email" placeholder="Enter your email">
-              </div>
-              <div class="form-group">
-                <!-- <label for="v_message">Email</label> -->
-                <textarea name="v_message" id="" cols="30" rows="3" class="form-control py-2" placeholder="Write your message"></textarea>
-                <!-- <input type="text" class="form-control py-2" id="email"> -->
-              </div>
-              <div class="form-group">
-                <input type="submit" class="btn btn-white px-5 py-2" value="Send">
-              </div>
-            </form>
+    <footer class="footer">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-6 col-lg-4">
+            <h3 class="heading-section">About Us</h3>
+            <p class="lead">We are dedicated to providing a customized home based care service to patients affected by
+              chronic illnesses. </p>
+            <p class="mb-5">We aim to empower them and their families to get access to the best long term, good quality
+              care and rehabilitation. </p>
+            <img src="images/Coming home logo.jpg" style="width: 50px" alt="" class="img-fluid rounded-full mb-2">
           </div>
-        </div>
-        
-      </div>
-    </div>
-
-  </div> <!-- .featured-donate -->
-
- 
-  <footer class="footer">
-    <div class="container">
-      <div class="row mb-5">
-       <div class="col-md-6 col-lg-4">
-          <h3 class="heading-section">About Us</h3>  
-          <p class="lead">We are dedicated to providing a customized home based care service to patients affected by chronic illnesses. </p>
-          <p class="mb-5">We aim to empower them and their families to get access to the best long term, good quality care and rehabilitation. </p>
-          <img src="images/Coming home logo.jpg" style="width: 50px" alt="" class="img-fluid rounded-full mb-2">
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <h3 class="heading-section">Recent Blog</h3>
-          <div class="block-21 d-flex mb-4" data-toggle="modal" data-target="#successStories">
-            <figure class="mr-3">
-              <img src="images/new/279677e0-b749-496d-b9f5-e2984f571fa8.jpg" alt="" class="img-fluid">
-            </figure>
-            <div class="text">
-              <h3 class="heading"><a href="#">Success Stories</a></h3>
-              <div class="meta">
-                <div><a href="#"><span class="icon-calendar"></span> July 29, 2021</a></div>
-                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="modal fade" id="successStories" tabindex="-1" role="dialog" aria-labelledby="successStoriesLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="successStoriesLabel">Success Stories</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+          <div class="col-md-6 col-lg-4">
+            <h3 class="heading-section">Recent Media</h3>
+            <div class="block-21 d-flex mb-4" data-toggle="modal" data-target="#successStories">
+              <figure class="mr-3">
+                <img src="images/new/279677e0-b749-496d-b9f5-e2984f571fa8.jpg" alt="" class="img-fluid">
+              </figure>
+              <div class="text">
+                <h3 class="heading"><a href="#">Success Stories</a></h3>
+                <div class="meta">
+                  <div><a href="#"><span class="icon-calendar"></span> July 29, 2021</a></div>
+                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
                 </div>
-                <div class="modal-body" style="color: black;">
-                  2022
+              </div>
+            </div>
 
-                  <p> I am Avashna Moodley and I am a stroke veteran. Why veteran … I’ve got the scars , had a
-                    meaningful life pretrauma , didn’t have a road map to recovery and definitely had the long service .
-                    My stroke happened more than 11 years ago.</p>
+            <div class="modal fade" id="successStories" tabindex="-1" role="dialog"
+              aria-labelledby="successStoriesLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="successStoriesLabel">Success Stories</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body" style="color: black;">
+                    2022
 
-                  <p> My life pre stroke was like any other , we were a family of 4 , me ,my husband and 2 kids who were
-                    in primary school. Like most young families , we lived on our own , this meant we didn’t have a
-                    village to raise our children. This meant a routine filled schedule .My husband ran his family
-                    business . My business was at its peak , I either sold or franchised . I was young ,ambitious and
-                    courageous so I decided to franchise my business that I started on my own strength & intelligence .
-                    Together with my precious family this was my empire , big or small , it was my success .</p>
+                    <p> I am Avashna Moodley and I am a stroke veteran. Why veteran … I’ve got the scars , had a
+                      meaningful life pretrauma , didn’t have a road map to recovery and definitely had the long service
+                      .
+                      My stroke happened more than 11 years ago.</p>
 
-                  <p> I planned out my whole life to never be where I am right now .</p>
+                    <p> My life pre stroke was like any other , we were a family of 4 , me ,my husband and 2 kids who
+                      were
+                      in primary school. Like most young families , we lived on our own , this meant we didn’t have a
+                      village to raise our children. This meant a routine filled schedule .My husband ran his family
+                      business . My business was at its peak , I either sold or franchised . I was young ,ambitious and
+                      courageous so I decided to franchise my business that I started on my own strength & intelligence
+                      .
+                      Together with my precious family this was my empire , big or small , it was my success .</p>
 
-                  <p> I awoke on the morning of Christmas Eve (2011) then quickly realized that I could not move . I
-                    tried to get off the bed to walk to the bathroom , to tell my husband that something was wrong – my
-                    body was frozen in time . I was so confused . </p>
+                    <p> I planned out my whole life to never be where I am right now .</p>
 
-                  <p> After almost 11 years , I still can’t believe this day ever happened. It’s like I’m watched a true
-                    story movie .</p>
+                    <p> I awoke on the morning of Christmas Eve (2011) then quickly realized that I could not move . I
+                      tried to get off the bed to walk to the bathroom , to tell my husband that something was wrong –
+                      my
+                      body was frozen in time . I was so confused . </p>
 
-                  <br>
+                    <p> After almost 11 years , I still can’t believe this day ever happened. It’s like I’m watched a
+                      true
+                      story movie .</p>
 
-
-                  <p> At 41 years old I had a stroke . My empire was turned upside down . There was no warning signs ,
-                    no time to get my affairs in order , to prepare my kids for their mother who could no longer walk ,
-                    talk , read , write or recall her life .</p>
-
-                  <p> For the next 19 days in ICU , I would beg the nurse to call my husband so he can bring my clothes
-                    to take me home . I would pull out all the drips in preparation to go home …. My safe place .</p>
-                  <p> The doctors discharged me very reluctantly so that I could see my eldest child off to his first
-                    day of High school. Reality hit me , the first night at home , I wanted to go to my new safe place
-                    …. The hospital.</p>
-
-                  <p> I felt alone , like I didn’t belong . My family could only visit me in ICU during set periods of
-                    time . They were totally unprepared and unable to read my desperate attempts at communicating
-                    through body language and other non-verbal cues . The frustration went both ways and we all soon
-                    realized how unprepared we were to tackle the after effects of a stroke .</p>
-
-
-                  <p> My head was like a freight train with the brake off. Thoughts and questions rushing around. </p>
-                  <p> I could hear myself speaking clearly to my family and friends but the sound coming from my mouth
-                    didn’t match those formed in my mind .</p>
+                    <br>
 
 
-                  <p> According to my neurologist , I had the worst stroke on the scale – 3 in 1 and today I am grateful
-                    to say that I have recovered 99.5% of my physical and mental abilities . </p>
+                    <p> At 41 years old I had a stroke . My empire was turned upside down . There was no warning signs ,
+                      no time to get my affairs in order , to prepare my kids for their mother who could no longer walk
+                      ,
+                      talk , read , write or recall her life .</p>
+
+                    <p> For the next 19 days in ICU , I would beg the nurse to call my husband so he can bring my
+                      clothes
+                      to take me home . I would pull out all the drips in preparation to go home …. My safe place .</p>
+                    <p> The doctors discharged me very reluctantly so that I could see my eldest child off to his first
+                      day of High school. Reality hit me , the first night at home , I wanted to go to my new safe place
+                      …. The hospital.</p>
+
+                    <p> I felt alone , like I didn’t belong . My family could only visit me in ICU during set periods of
+                      time . They were totally unprepared and unable to read my desperate attempts at communicating
+                      through body language and other non-verbal cues . The frustration went both ways and we all soon
+                      realized how unprepared we were to tackle the after effects of a stroke .</p>
 
 
-                  <br>
-
-                  <p> I look at my stroke as I was stripped of my stuff , I had to rebuild , layer by layer. It was
-                    almost an initiation of sorts. Through my experience I’ve realized that recovery from any life
-                    threatening condition is not something you can not do on your own , because when you are ill you
-                    become mentally, physically and emotionally deprived of the fuel you need to recover fully. This was
-                    the catalyst in setting up a non profit organization called Coming Home . </p>
-                  <p> Once you stop using your pain to navigate your world , you set your recovery in motion .Meaning
-                    your recovery takes place in your mind and then your body will follow . </p>
-                  <p> This is 1st step that me and my fellow stroke veterans show you. </p>
-                  <p> Your doctors play a crucial role , your rehab team play an equally crucial role but they don’t
-                    have first hand experience. We talk to your team and help map out your recovery road , we know how
-                    you feel, we don’t see your mood changes as stubbornness and laziness. We get you , we get your
-                    every need and we know your needs will change cos so has ours . Once you join our Coming Home family
-                    , you are never alone and your family is never alone </p>
+                    <p> My head was like a freight train with the brake off. Thoughts and questions rushing around. </p>
+                    <p> I could hear myself speaking clearly to my family and friends but the sound coming from my mouth
+                      didn’t match those formed in my mind .</p>
 
 
-
-                  <br>
-
-
-                  <p> I view my stroke as a tree under whose shade I did not plan to sit . Nothing grows in the shade .
-                  </p>
-                  <p> Do you choose to sit under your stroke tree ? The only power you have , is the power of choice .
-                  </p>
-                  <p> You’ve have a meaningful life before and you can have a meaningful life now .</p>
-
-                  <p> It’s your choice </p>
+                    <p> According to my neurologist , I had the worst stroke on the scale – 3 in 1 and today I am
+                      grateful
+                      to say that I have recovered 99.5% of my physical and mental abilities . </p>
 
 
+                    <br>
+
+                    <p> I look at my stroke as I was stripped of my stuff , I had to rebuild , layer by layer. It was
+                      almost an initiation of sorts. Through my experience I’ve realized that recovery from any life
+                      threatening condition is not something you can not do on your own , because when you are ill you
+                      become mentally, physically and emotionally deprived of the fuel you need to recover fully. This
+                      was
+                      the catalyst in setting up a non profit organization called Coming Home . </p>
+                    <p> Once you stop using your pain to navigate your world , you set your recovery in motion .Meaning
+                      your recovery takes place in your mind and then your body will follow . </p>
+                    <p> This is 1st step that me and my fellow stroke veterans show you. </p>
+                    <p> Your doctors play a crucial role , your rehab team play an equally crucial role but they don’t
+                      have first hand experience. We talk to your team and help map out your recovery road , we know how
+                      you feel, we don’t see your mood changes as stubbornness and laziness. We get you , we get your
+                      every need and we know your needs will change cos so has ours . Once you join our Coming Home
+                      family
+                      , you are never alone and your family is never alone </p>
+
+
+
+                    <br>
+
+
+                    <p> I view my stroke as a tree under whose shade I did not plan to sit . Nothing grows in the shade
+                      .
+                    </p>
+                    <p> Do you choose to sit under your stroke tree ? The only power you have , is the power of choice .
+                    </p>
+                    <p> You’ve have a meaningful life before and you can have a meaningful life now .</p>
+
+                    <p> It’s your choice </p>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="block-21 d-flex mb-4" data-toggle="modal" data-target="#communityDevelopment">
+              <figure class="mr-3">
+                <img src="images/new/4dd03165-72d6-43de-99ed-63405b8ff96d.jpg" alt="" class="img-fluid">
+              </figure>
+              <div class="text">
+                <h3 class="heading"><a href="#">Community Development</a></h3>
+                <div class="meta">
+                  <div><a href="#"><span class="icon-calendar"></span> July 29, 2021</a></div>
+                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="communityDevelopment" tabindex="-1" role="dialog"
+              aria-labelledby="communityDevelopmentLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="communityDevelopmentLabel">Community Development</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <img src="/images/download.jpg" style="width: 100%;" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="block-21 d-flex mb-4" data-toggle="modal" data-target="#lifeAfter">
+              <figure class="mr-3">
+                <img src="images/new/6e7ce383-86a1-4d70-b9d1-564f11e862b8.jpg" alt="" class="img-fluid">
+              </figure>
+              <div class="text">
+                <h3 class="heading"><a href="#">Life after stroke</a></h3>
+                <div class="meta">
+                  <div><a href="#"><span class="icon-calendar"></span> July 29, 2021</a></div>
+                  <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                  <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="lifeAfter" tabindex="-1" role="dialog" aria-labelledby="lifeAfterLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="lifeAfterLabel">Life after stroke</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- <img src="/images/Life After stroke (1).pdf" style="width: 100%;" /> -->
+                    <a href="/images/Life After stroke (1).pdf" target="_blank">Click here to view</a>
+                    <embed src="/images/Life After stroke (1).pdf" style="width: 100%; height: 100%" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="block-21 d-flex mb-4" data-toggle="modal" data-target="#communityDevelopment">
-            <figure class="mr-3">
-              <img src="images/new/4dd03165-72d6-43de-99ed-63405b8ff96d.jpg" alt="" class="img-fluid">
-            </figure>
-            <div class="text">
-              <h3 class="heading"><a href="#">Community Development</a></h3>
-              <div class="meta">
-                <div><a href="#"><span class="icon-calendar"></span> July 29, 2021</a></div>
-                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="modal fade" id="communityDevelopment" tabindex="-1" role="dialog" aria-labelledby="communityDevelopmentLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="communityDevelopmentLabel">Community Development</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <img src="/images/download.jpg" style="width: 100%;" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="block-21 d-flex mb-4"  data-toggle="modal" data-target="#lifeAfter">
-            <figure class="mr-3">
-              <img src="images/new/6e7ce383-86a1-4d70-b9d1-564f11e862b8.jpg" alt="" class="img-fluid">
-            </figure>
-            <div class="text">
-              <h3 class="heading"><a href="#">Life after stroke</a></h3>
-              <div class="meta">
-                <div><a href="#"><span class="icon-calendar"></span> July 29, 2021</a></div>
-                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="modal fade" id="lifeAfter" tabindex="-1" role="dialog" aria-labelledby="lifeAfterLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="lifeAfterLabel">Life after stroke</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <!-- <img src="/images/Life After stroke (1).pdf" style="width: 100%;" /> -->
-                  <a href="/images/Life After stroke (1).pdf" target="_blank">Click here to view</a>
-                  <embed src="/images/Life After stroke (1).pdf" style="width: 100%; height: 100%"  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="block-23">
-            <h3 class="heading-section">Get Connected</h3>
-              <ul> 
-                <li><span class="icon icon-map-marker"></span><span class="text"></span></li>
+          <div class="col-md-6 col-lg-4">
+            <div class="block-23">
+              <h3 class="heading-section">Get Connected</h3>
+              <ul>
+                <li><span class="icon icon-map-marker"></span><a href="#"><span class="text">Ballito</span></a></li>
                 <li><a href="#"><span class="icon icon-phone"></span><span class="text">+27 615 019 002</span></a></li>
-                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">cho@hospital2home.co.za</span></a></li>
-                <li><a href="https://m.facebook.com/hospitaltohome/"><span class="icon icon-facebook"></span><span class="text">coming home</span></a></li>
-                <li><a href="https://www.instagram.com/cominghome_sa/"><span class="icon icon-instagram"></span><span class="text">cominghome_sa</span></a></li>
-                <li><a href="https://www.youtube.com/channel/UCyOg1xugzxmBPjaPnSOHzcw"><span class="icon icon-youtube"></span><span class="text">Coming Home Organisation</span></a></li>
+                <li><a href="#"><span class="icon icon-envelope"></span><span
+                      class="text">CHO@cominghome.org.za</span></a></li>
+                <li><a href="https://m.facebook.com/hospitaltohome/"><span class="icon icon-facebook"></span><span
+                      class="text">coming home</span></a></li>
+                <li><a href="https://www.instagram.com/cominghome_sa/"><span class="icon icon-instagram"></span><span
+                      class="text">cominghome_sa</span></a></li>
+                <li><a href="https://www.youtube.com/channel/UCyOg1xugzxmBPjaPnSOHzcw"><span
+                      class="icon icon-youtube"></span><span class="text">Coming Home Organisation</span></a></li>
               </ul>
             </div>
+          </div>
+
+
         </div>
-        
-        
-      </div>
-      <div class="row pt-5">
-        <div class="col-md-12 text-center">
-          
+        <div class="row pt-5">
+          <div class="col-md-12 text-center">
+
             <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ion-ios-heart text-danger" aria-hidden="true"></i> by <a href="" target="_blank" >Halo Republic</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
+              with <i class="ion-ios-heart text-danger" aria-hidden="true"></i> by <a href="" target="_blank">Halo
+                Republic</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
-          
+
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+          stroke="#F96D00" />
+      </svg></div>
 
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.fancybox.min.js"></script>
-  
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
-    
-  </body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
+
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="js/google-map.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
 </html>
